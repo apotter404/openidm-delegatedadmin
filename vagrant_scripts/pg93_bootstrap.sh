@@ -28,7 +28,7 @@ iptables -A INPUT -p tcp --dport 5432 -j ACCEPT
 # initialize the openidm repository
 psql -U postgres < /vagrant/target/idm-staging/openidm/db/postgresql/scripts/createuser.pgsql
 psql -U openidm < /vagrant/target/idm-staging/openidm/db/postgresql/scripts/openidm.pgsql
-psql -U postgres openidm < /vagrant/target/idm-staging/openidm/db/postgresql/scripts/default_schema_optimization.pgsql.pgsql
+psql -U postgres openidm < /vagrant/target/idm-staging/openidm/db/postgresql/scripts/default_schema_optimization.pgsql
 
 # Include the custom schema optimizations for this project
 # (there are none!)

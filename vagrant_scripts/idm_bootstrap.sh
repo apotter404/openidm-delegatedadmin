@@ -3,7 +3,7 @@
 export OPENIDM_OPTS="-Xms128m -Xmx256m"
 
 #single VM desired
-echo "192.168.50.4 OPENIDM_REPO_HOST" >> /etc/hosts
+echo "192.168.50.3 OPENIDM_REPO_HOST" >> /etc/hosts
 
 echo "export OPENIDM_OPTS=\"${OPENIDM_OPTS}\"" >> /etc/profile
 
@@ -21,7 +21,7 @@ apt-get --yes update
 #echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 #echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 
-#apt-get --yes --force-yes install oracle-java7-installer 
+#apt-get --yes --force-yes install oracle-java7-installer
 
 # Below is for OpenJDK; comment this line out if you want Oracle JDK
 apt-get --yes --force-yes install openjdk-7-jdk
