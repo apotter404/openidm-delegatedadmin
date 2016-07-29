@@ -162,7 +162,7 @@ define("config/AppConfiguration", [
             {
                 moduleClass: "org/forgerock/openidm/ui/common/resource/ResourceEditViewRegistry",
                 configuration: {
-                    "resource-ORGManagers" : "org/forgerock/openidm/ui/orgmgr/ORGEditView"
+                    "resource-organisation" : "org/forgerock/openidm/ui/orgmgr/organisationEditView"
                 }
             }
         ],

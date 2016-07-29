@@ -24,7 +24,7 @@ define("config/routes/CustomRoutesConfig", [
     //view files are mapped aliases registered within requirejs
     var obj = {
         "manageORG": {
-            view: "org/forgerock/openidm/ui/orgmgr/ORGManagerView",
+            view: "org/forgerock/openidm/ui/orgmgr/organisationManagerView",
             url: /orgmgr(\/[^\&]*)(\&.+)?/,
             pattern: "orgmgr??",
             defaults: ["/",""]

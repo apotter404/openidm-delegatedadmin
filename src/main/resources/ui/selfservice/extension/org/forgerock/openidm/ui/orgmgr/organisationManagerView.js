@@ -16,7 +16,7 @@
 
 /*global define, document */
 
-define("org/forgerock/openidm/ui/orgmgr/ORGManagerView", [
+define("org/forgerock/openidm/ui/orgmgr/organisationManagerView", [
     "jquery",
     "underscore",
     "handlebars",
@@ -36,8 +36,8 @@ define("org/forgerock/openidm/ui/orgmgr/ORGManagerView", [
         RelationshipArrayView
     ) {
 
-    var ORGManagerView = AbstractView.extend({
-        template: "templates/orgmgr/ORGManagerTemplate.html",
+    var organisationManagerView = AbstractView.extend({
+        template: "templates/orgmgr/organisationManagerTemplate.html",
 
 
 
@@ -58,9 +58,9 @@ define("org/forgerock/openidm/ui/orgmgr/ORGManagerView", [
                 prop.propName = "manageOrgs";
 
                 this.parentRender(function() {
-                    var ORGView = new RelationshipArrayView();
+                    var organisationView = new RelationshipArrayView();
 
-                    ORGView.render({ element: "#ORG_list", prop: prop, schema: schema }, function () {
+                    organisationView.render({ element: "#organisation_list", prop: prop, schema: schema }, function () {
                         $('.add-relationship-btn').hide();
                         $('.remove-relationships-btn').hide();
                           if (callback) {
@@ -74,5 +74,5 @@ define("org/forgerock/openidm/ui/orgmgr/ORGManagerView", [
         }
 
       });
-      return new ORGManagerView();
+      return new organisationManagerView();
 });

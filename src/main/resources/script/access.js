@@ -237,6 +237,30 @@ var httpAccessConfig =
             "methods"   : "read",
             "actions"   : "*"
         },
+        {
+            "pattern"   : "managed/user/*",
+            "roles"     : "openidm-authorized",
+            "methods"   : "query",
+            "actions"   : "*"
+        },
+        {
+            "pattern"   : "managed/user",
+            "roles"     : "openidm-authorized",
+            "methods"   : "query",
+            "actions"   : "*"
+        },
+        {
+            "pattern"   : "managed/organisation/*",
+            "roles"     : "openidm-authorized",
+            "methods"   : "*",
+            "actions"   : "*"
+        },
+        {
+            "pattern"   : "endpoint/linkedView/managed/organisation/*",
+            "roles"     : "openidm-authorized",
+            "methods"   : "read",
+            "actions"   : "*"
+        },
         // This rule is primarily controlled by the ownDataOnly function - that will only allow
         // access to the endpoint from which the user originates
         // (For example a managed/user with the _id of bob will only be able to access managed/user/bob)

@@ -16,7 +16,7 @@
 
 /*global define */
 
-define("org/forgerock/openidm/ui/orgmgr/ORGEditView", [
+define("org/forgerock/openidm/ui/orgmgr/organisationEditView", [
     "jquery",
     "lodash",
     "handlebars",
@@ -27,18 +27,18 @@ function ($, _, Handlebars,
     AbstractView,
     GenericEditResourceView
   ) {
-    var ORGEditView = function () {
+    var organisationEditView = function () {
         return AbstractView.apply(this, arguments);
     };
 
-    ORGEditView.prototype = Object.create(GenericEditResourceView);
+    organisationEditView.prototype = Object.create(GenericEditResourceView);
 
-    ORGEditView.prototype.render = function (args, callback) {
+    organisationEditView.prototype.render = function (args, callback) {
         GenericEditResourceView.render.call(this, args, _.bind(function () {
-            $('#backBtn').hide();
-            $('#tabHeader_resource-ORGManagers').hide();
-            $('#deleteBtn').hide();
             setInterval(function () {
+                $('#backBtn').hide();
+                $('#tabHeader_resource-orgManagers').hide();
+                $('#deleteBtn').hide();
                 $('.tab-pane').find('.resourceEditLink').each(function () {
                     var txt = $(this).text();
                     $(this).parent().find('.link2Text').remove();
@@ -57,5 +57,5 @@ function ($, _, Handlebars,
         }, this));
     };
 
-    return new ORGEditView();
+    return new organisationEditView();
 });
