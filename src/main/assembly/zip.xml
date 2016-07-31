@@ -16,8 +16,8 @@
         </fileSet>
 
 
-        <!-- This block needs adjustment for your project, so that only 
-             the specific files you want to include from the default openidm 
+        <!-- This block needs adjustment for your project, so that only
+             the specific files you want to include from the default openidm
              configuration are included in your project -->
         <fileSet>
             <directory>${project.build.directory}/idm-staging/openidm</directory>
@@ -35,7 +35,7 @@
                  -->
                 <include>ui/**</include>
 
-                <!-- The below line includes all of the default connectors shipped 
+                <!-- The below line includes all of the default connectors shipped
                     with OpenIDM. Remove this line if you want a different set. -->
                 <include>connectors/*</include>
             </includes>
@@ -75,10 +75,18 @@
 
     </fileSets>
 
+    <!-- use default repo.jdbc.json for postgresql database -->
+    <files>
+      <file>
+        <source>${project.build.directory}/idm-staging/openidm/db/postgresql/conf/repo.jdbc.json</source>
+        <outputDirectory>/conf</outputDirectory>
+      </file>
+    </files>
+
 
     <dependencySets>
 
-        <!-- This will place any dependencies you have declared into the /bundle directory by default. 
+        <!-- This will place any dependencies you have declared into the /bundle directory by default.
             Be sure to update the list of excludes for anything you don't want placed in there. -->
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
@@ -91,7 +99,7 @@
         </dependencySet>
 
         <!-- The location for each non-bundle dependency will need to be specified, as below.
-             In this example, we are unpacking any OpenICF connectors we have as a dependency 
+             In this example, we are unpacking any OpenICF connectors we have as a dependency
              into the /connectors folder.
          -->
         <dependencySet>

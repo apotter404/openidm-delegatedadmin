@@ -25,9 +25,11 @@ service postgresql reload
 echo "alter user postgres with password 'password';" | psql -U postgres
 iptables -A INPUT -p tcp --dport 5432 -j ACCEPT
 
-# initialize the openidm repository
-psql -U postgres < /vagrant/src/main/resources/db/openidm/createuser.pgsql
-psql -U openidm < /vagrant/src/main/resources/db/openidm/openidm.pgsql
+# initialize the openidm repository using default scripts
+psql -U postgres < /vagrant/target/idm-staging/openidm/db/postgresql/scripts/createuser.pgsql
+psql -U openidm < /vagrant/target/idm-staging/openidm/db/postgresql/scripts/openidm.pgsql
+psql -U postgres openidm < /vagrant/target/idm-staging/openidm/db/postgresql/scripts/default_schema_optimization.pgsql
 
 # Include the custom schema optimizations for this project
-psql -U postgres openidm < /vagrant/src/main/resources/db/openidm/custom_schema_optimizations.pgsql
+# (there are none!)
+#psql -U postgres openidm < /vagrant/src/main/resources/db/openidm/custom_schema_optimizations.pgsql
