@@ -35,10 +35,10 @@ function ($, _, Handlebars,
 
     organisationEditView.prototype.render = function (args, callback) {
         GenericEditResourceView.render.call(this, args, _.bind(function () {
+            $('#backBtn').hide();
+            $('#tabHeader_resource-orgManagers').hide();
+            $('#deleteBtn').hide();
             setInterval(function () {
-                $('#backBtn').hide();
-                $('#tabHeader_resource-orgManagers').hide();
-                $('#deleteBtn').hide();
                 $('.tab-pane').find('.resourceEditLink').each(function () {
                     var txt = $(this).text();
                     $(this).parent().find('.link2Text').remove();
@@ -49,7 +49,7 @@ function ($, _, Handlebars,
                 $('.tab-pane').find('.relationshipGraphBody').find('a').each(function () {
                     var txt = $(this).text();
                     $(this).removeAttr('href');
-                });
+                }); 
             }, 500);
             if (callback) {
                 callback();

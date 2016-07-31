@@ -63,6 +63,7 @@ define("org/forgerock/openidm/ui/orgmgr/organisationManagerView", [
                     organisationView.render({ element: "#organisation_list", prop: prop, schema: schema }, function () {
                         $('.add-relationship-btn').hide();
                         $('.remove-relationships-btn').hide();
+                        $('.btn-toolbar').hide();
                           if (callback) {
                               callback();
                           }
