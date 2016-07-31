@@ -33,8 +33,9 @@ The sample configures an 'organisation' managed object.  Two organisations are p
 The sample configures the managed user object to allow users to be related to organisations as either:
 - Members, or
 - Organisation managers
+
 The sample creates two Organisation Managers - orgmgra and orgmgrb -
-  related to Organisation 1 and Organisation2 respectively.
+  related to Organisation1 and Organisation2 respectively.
 
 Log on as orgmgra (Password1) and see that they can only 'manage' Organisation1.
 orgmgrb can only manage Organisation2
