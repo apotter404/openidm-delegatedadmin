@@ -11,21 +11,21 @@ It also runs bootstrap scripts, and copies the specific OpenIDM config (in src/r
 configuration directories of the built environment.
 
 The Delegated Admin sample uses this capability so that simply running:
-  vagrant up
+- vagrant up
 will build and deploy a full environment.
 
 To install
 ==========
-Ensure VirtualBox is installed
-Ensure Vagrant is installed
-Download this project to a local directory
-From download directory run:
-  vagrant up
+- Ensure VirtualBox is installed
+- Ensure Vagrant is installed
+- Download this project to a local directory
+- From download directory run:
+--  vagrant up
 
 When build has finished (which could take some time to download the base image, supporting tools,
 updates, OpenIDM, postgres) you can access, from your local browser:
-  https://localhost:18443/admin for the OpenIDM administration UI, and
-  https://localhost:18443 for the OpenIDM end user UI
+-  https://localhost:18443/admin for the OpenIDM administration UI, and
+-  https://localhost:18443 for the OpenIDM end user UI
 
 To use
 ======
