@@ -10,17 +10,14 @@ Jake's project provides an automated build of VM in virtualbox, download and ins
 It also runs bootstrap scripts, and copies the specific OpenIDM config (in src/resource) to the relevant
 configuration directories of the built environment.
 
-The Delegated Admin sample uses this capability so that simply running:
-- vagrant up
-will build and deploy a full environment.
+The Delegated Admin sample uses this capability so that simply running "vagrant up" will build and deploy a full environment.
 
 To install
 ==========
 - Ensure VirtualBox is installed
 - Ensure Vagrant is installed
 - Download this project to a local directory
-- From download directory run:
---  vagrant up
+- From download directory run: vagrant up
 
 When build has finished (which could take some time to download the base image, supporting tools,
 updates, OpenIDM, postgres) you can access, from your local browser:
