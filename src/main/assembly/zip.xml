@@ -28,6 +28,7 @@
                 <include>bundle/**</include>
                 <include>legal-notices/*</include>
                 <include>logs/*</include>
+                <include>script/*</include>
                 <include>security/*</include>
 
                 <!--
