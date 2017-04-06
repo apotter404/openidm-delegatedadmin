@@ -524,22 +524,6 @@
                             "effectiveRolesPropName" : "effectiveRoles"
                         }
                     },
-                    "lastSync" : {
-                        "description" : "",
-                        "title" : "",
-                        "viewable" : false,
-                        "searchable" : false,
-                        "userEditable" : false,
-                        "policies" : [ ],
-                        "returnByDefault" : false,
-                        "minLength" : "",
-                        "pattern" : "",
-                        "type" : "object",
-                        "properties" : { },
-                        "required" : [ ],
-                        "order" : [ ],
-                        "scope" : "private"
-                    },
                     "kbaInfo" : {
                         "description" : "",
                         "title" : "",
@@ -568,39 +552,42 @@
                         "returnByDefault" : false,
                         "minLength" : "",
                         "pattern" : "",
-                        "type" : "relationship",
-                        "reverseRelationship" : true,
-                        "reversePropertyName" : "members",
-                        "validate" : true,
-                        "properties" : {
-                            "_ref" : {
-                                "type" : "string"
-                            },
-                            "_refProperties" : {
-                                "type" : "object",
-                                "properties" : {
-                                    "_id" : {
-                                        "type" : "string",
-                                        "label" : ""
+                        "type" : "array",
+                        "items" : {
+                            "type" : "relationship",
+                            "reverseRelationship" : true,
+                            "reversePropertyName" : "members",
+                            "validate" : true,
+                            "properties" : {
+                                "_ref" : {
+                                    "type" : "string"
+                                },
+                                "_refProperties" : {
+                                    "type" : "object",
+                                    "properties" : {
+                                        "_id" : {
+                                            "type" : "string",
+                                            "label" : ""
+                                        }
                                     }
                                 }
-                            }
-                        },
-                        "resourceCollection" : [
-                            {
-                                "path" : "managed/organisation",
-                                "label" : "MemberOf",
-                                "query" : {
-                                    "queryFilter" : "true",
-                                    "fields" : [
-                                        "name"
-                                    ],
-                                    "sortKeys" : [
-                                        "name"
-                                    ]
+                            },
+                            "resourceCollection" : [
+                                {
+                                    "path" : "managed/organisation",
+                                    "label" : "Organisation",
+                                    "query" : {
+                                        "queryFilter" : "true",
+                                        "fields" : [
+                                            "name"
+                                        ],
+                                        "sortKeys" : [
+                                            "name"
+                                        ]
+                                    }
                                 }
-                            }
-                        ]
+                            ]
+                        }
                     },
                     "manageOrgs" : {
                         "description" : "",
@@ -612,39 +599,58 @@
                         "returnByDefault" : false,
                         "minLength" : "",
                         "pattern" : "",
-                        "type" : "relationship",
-                        "reverseRelationship" : true,
-                        "reversePropertyName" : "orgManagers",
-                        "validate" : true,
-                        "properties" : {
-                            "_ref" : {
-                                "type" : "string"
-                            },
-                            "_refProperties" : {
-                                "type" : "object",
-                                "properties" : {
-                                    "_id" : {
-                                        "type" : "string",
-                                        "label" : ""
+                        "type" : "array",
+                        "items" : {
+                            "type" : "relationship",
+                            "reverseRelationship" : true,
+                            "reversePropertyName" : "orgManagers",
+                            "validate" : true,
+                            "properties" : {
+                                "_ref" : {
+                                    "type" : "string"
+                                },
+                                "_refProperties" : {
+                                    "type" : "object",
+                                    "properties" : {
+                                        "_id" : {
+                                            "type" : "string",
+                                            "label" : ""
+                                        }
                                     }
                                 }
-                            }
-                        },
-                        "resourceCollection" : [
-                            {
-                                "path" : "managed/organisation",
-                                "label" : "Org to Manage",
-                                "query" : {
-                                    "queryFilter" : "true",
-                                    "fields" : [
-                                        "name"
-                                    ],
-                                    "sortKeys" : [
-                                        "name"
-                                    ]
+                            },
+                            "resourceCollection" : [
+                                {
+                                    "path" : "managed/organisation",
+                                    "label" : "Orgs to Manage",
+                                    "query" : {
+                                        "queryFilter" : "true",
+                                        "fields" : [
+                                            "name"
+                                        ],
+                                        "sortKeys" : [
+                                            "name"
+                                        ]
+                                    }
                                 }
-                            }
-                        ]
+                            ]
+                        }
+                    },
+                    "lastSync" : {
+                        "description" : "",
+                        "title" : "",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "userEditable" : false,
+                        "policies" : [ ],
+                        "returnByDefault" : false,
+                        "minLength" : "",
+                        "pattern" : "",
+                        "type" : "object",
+                        "properties" : { },
+                        "required" : [ ],
+                        "order" : [ ],
+                        "scope" : "private"
                     }
                 },
                 "required" : [
@@ -674,10 +680,10 @@
                     "reports",
                     "effectiveRoles",
                     "effectiveAssignments",
-                    "lastSync",
                     "kbaInfo",
                     "orgs",
-                    "manageOrgs"
+                    "manageOrgs",
+                    "lastSync"
                 ]
             }
         },
@@ -1094,39 +1100,42 @@
                         "returnByDefault" : false,
                         "minLength" : "",
                         "pattern" : "",
-                        "type" : "relationship",
-                        "reverseRelationship" : true,
-                        "reversePropertyName" : "orgs",
-                        "validate" : true,
-                        "properties" : {
-                            "_ref" : {
-                                "type" : "string"
-                            },
-                            "_refProperties" : {
-                                "type" : "object",
-                                "properties" : {
-                                    "_id" : {
-                                        "type" : "string",
-                                        "label" : ""
+                        "type" : "array",
+                        "items" : {
+                            "type" : "relationship",
+                            "reverseRelationship" : true,
+                            "reversePropertyName" : "orgs",
+                            "validate" : true,
+                            "properties" : {
+                                "_ref" : {
+                                    "type" : "string"
+                                },
+                                "_refProperties" : {
+                                    "type" : "object",
+                                    "properties" : {
+                                        "_id" : {
+                                            "type" : "string",
+                                            "label" : ""
+                                        }
                                     }
                                 }
-                            }
-                        },
-                        "resourceCollection" : [
-                            {
-                                "path" : "managed/user",
-                                "label" : "Members",
-                                "query" : {
-                                    "queryFilter" : "true",
-                                    "fields" : [
-                                        "userName"
-                                    ],
-                                    "sortKeys" : [
-                                        "userName"
-                                    ]
+                            },
+                            "resourceCollection" : [
+                                {
+                                    "path" : "managed/user",
+                                    "label" : "Members",
+                                    "query" : {
+                                        "queryFilter" : "true",
+                                        "fields" : [
+                                            "userName"
+                                        ],
+                                        "sortKeys" : [
+                                            "userName"
+                                        ]
+                                    }
                                 }
-                            }
-                        ]
+                            ]
+                        }
                     },
                     "orgManagers" : {
                         "description" : "",
@@ -1138,39 +1147,42 @@
                         "returnByDefault" : false,
                         "minLength" : "",
                         "pattern" : "",
-                        "type" : "relationship",
-                        "reverseRelationship" : true,
-                        "reversePropertyName" : "orgManagers",
-                        "validate" : true,
-                        "properties" : {
-                            "_ref" : {
-                                "type" : "string"
-                            },
-                            "_refProperties" : {
-                                "type" : "object",
-                                "properties" : {
-                                    "_id" : {
-                                        "type" : "string",
-                                        "label" : ""
+                        "type" : "array",
+                        "items" : {
+                            "type" : "relationship",
+                            "reverseRelationship" : true,
+                            "reversePropertyName" : "manageOrgs",
+                            "validate" : true,
+                            "properties" : {
+                                "_ref" : {
+                                    "type" : "string"
+                                },
+                                "_refProperties" : {
+                                    "type" : "object",
+                                    "properties" : {
+                                        "_id" : {
+                                            "type" : "string",
+                                            "label" : ""
+                                        }
                                     }
                                 }
-                            }
-                        },
-                        "resourceCollection" : [
-                            {
-                                "path" : "managed/user",
-                                "label" : "Managers",
-                                "query" : {
-                                    "queryFilter" : "true",
-                                    "fields" : [
-                                        "userName"
-                                    ],
-                                    "sortKeys" : [
-                                        "userName"
-                                    ]
+                            },
+                            "resourceCollection" : [
+                                {
+                                    "path" : "managed/user",
+                                    "label" : "Managers",
+                                    "query" : {
+                                        "queryFilter" : "true",
+                                        "fields" : [
+                                            "userName"
+                                        ],
+                                        "sortKeys" : [
+                                            "userName"
+                                        ]
+                                    }
                                 }
-                            }
-                        ]
+                            ]
+                        }
                     }
                 },
                 "required" : [ ],

@@ -1,12 +1,13 @@
-OpenIDM v4.0.0 Delegated Admin Sample
+OpenIDM v4.5.0 Delegated Admin Sample
 =====================================
 
-The files in src/resources provide a custom configuration of OpenIDM v4 to demonstrate how
+The files in src/resources provide a custom configuration of OpenIDM v4.5 to demonstrate how
 delegated admin could be delivered.
 
 This project is derived from https://github.com/jakefeasel/openidm-delegatedadmin
 which provides a framework for delivering a custom OpenIDM project controlled by source control systems
-Jake's project provides an automated build of VM in virtualbox, download and install of OpenIDM4.
+Jake's project provides an automated build of VM in virtualbox, and install of OpenIDM4.5
+This project assumes you have downloaded OpenIDM4.5 from backstage.forgerock.com
 It also runs bootstrap scripts, and copies the specific OpenIDM config (in src/resource) to the relevant
 configuration directories of the built environment.
 
@@ -17,7 +18,8 @@ To install
 - Ensure VirtualBox is installed
 - Ensure Vagrant is installed
 - Download this project to a local directory
-- From download directory run: vagrant up
+- Run: 'unzip openidm-4.5.0.zip -d target/idm-staging/'  
+- From local download directory run: vagrant up
 
 When build has finished (which could take some time to download the base image, supporting tools,
 updates, OpenIDM, postgres) you can access, from your local browser:
