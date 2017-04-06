@@ -13,28 +13,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <openidm.version>4.0.0</openidm.version>
+        <openidm.version>4.5.0</openidm.version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>forgerock-staging-repository</id>
-            <name>ForgeRock Release Repository</name>
-            <url>http://maven.forgerock.org/repo/releases</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>forgerock-snapshots-repository</id>
-            <name>ForgeRock Snapshot Repository</name>
-            <url>http://maven.forgerock.org/repo/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
-
 
     <dependencies>
 
@@ -61,35 +41,6 @@
             </resource>
         </resources>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.7</version>
-                <executions>
-                    <execution>
-                        <id>unpack-openidm-staging</id>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <phase>generate-resources</phase>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.forgerock.openidm</groupId>
-                                    <artifactId>openidm-zip</artifactId>
-                                    <version>${openidm.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>false</overWrite>
-                                    <outputDirectory>${project.build.directory}/idm-staging/</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                            <overWriteReleases>false</overWriteReleases>
-                            <overWriteSnapshots>false</overWriteSnapshots>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
 
             <!-- If you need to download non-Maven dependencies for your project, I suggest 
                  using the plugin below to automate their retreival.

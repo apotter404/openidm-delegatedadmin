@@ -41,7 +41,7 @@ npm install -g grunt-cli
 #mvn clean install
 
 cd /vagrant
-mvn clean install
+mvn install
 npm install
 cd target/openidm_project/bin
 ./create-openidm-rc.sh
